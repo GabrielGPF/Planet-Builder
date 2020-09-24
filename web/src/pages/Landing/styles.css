@@ -1,0 +1,62 @@
+#page {
+    height: 100%;
+    width: 100%;
+}
+
+.background{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.rest {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 8rem;
+    font-weight: bold;
+    font-style: italic;
+    color:  #7b398b;
+    text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+
+    margin-bottom: 30px;
+}
+
+#page-landing {
+    height: 30rem;
+    width: 100vw;
+    min-width: 500px;
+
+    border-radius: 20px;
+    background: linear-gradient(0deg,  #1d0722 0%, #330e3c 100%);
+    color: white;
+
+    text-align: center;
+
+    /* input helder */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+}
+
+.login-button {
+    margin-top: 20px;
+    
+    height: 4rem;
+    width: 100%;
+    padding: 0px 5rem 0px 5rem;
+}
+
+@media (min-width: 500px) {
+    #page-landing {
+        width: 500px;
+    }
+}

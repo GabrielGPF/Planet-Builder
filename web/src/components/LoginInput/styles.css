@@ -1,0 +1,42 @@
+.input-box {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    align-self: flex-start;
+    color: #e1c2e9;
+}
+
+input.login-input {
+    -moz-box-shadow:    inset 0 0 4px #000000;
+    -webkit-box-shadow: inset 0 0 4px #000000;
+    box-shadow:         inset 0 0 4px #000000;
+
+    height: 3.6rem;
+    width: 40rem;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    outline-width: 0;
+    border: 0.3rem;
+    border-radius: 10px;
+
+    background-color: #592366;
+    color: white;
+}
+
+input.login-input:focus {
+    -moz-box-shadow:    inset 0 0 0 #000000;
+    -webkit-box-shadow: inset 0 0 0 #000000;
+    box-shadow:         inset 0 0 0 #000000;
+
+    outline-width: 0px;
+
+    border: rgba(160, 152, 152, 100) 0.13rem inset;
+    border-style: solid;
+    border-radius: 10px;
+
+    background-color: #7b398b;
+}

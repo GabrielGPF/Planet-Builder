@@ -1,0 +1,31 @@
+button {
+    height: 100%;
+    width:  100%;
+
+    background-color: #641b65;
+    color: #e1c2e9;
+    box-shadow: 0 0 3px 3px black 50%;
+
+    border-radius: 10px;
+    border-style: hidden;
+
+    outline: transparent;
+    
+    transition: 0.3s;
+
+    /* margin-top: 15px;
+    margin-left: 30px;
+    margin-right: 30px; */
+}
+
+button:focus{
+    background-color: #210827 !important;
+}
+
+button:disabled {
+    background-color: #7b398b;
+}
+
+button:hover {
+    background-color: #330e3c;
+}

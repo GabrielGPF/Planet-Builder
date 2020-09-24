@@ -1,0 +1,39 @@
+:root{
+    font-size: 50%;
+
+    /* variaveis de cor */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body, #root {
+    height: 100vh;
+}
+
+body {
+    background: white;
+}
+
+#root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body, input, button, textarea, div {
+    font: 300 1.6rem Epilogue;
+}
+
+header {
+    font: 500 1.6rem Epilogue;
+}
+
+@media (min-width: 700px){
+    :root {
+        font-size: 62.5%;
+    }
+}
