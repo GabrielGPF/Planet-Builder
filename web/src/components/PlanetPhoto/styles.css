@@ -1,0 +1,49 @@
+.planet-photo-0 {
+    height: 100%;
+    width: 6rem;
+    margin-right: 2rem;
+}
+
+.planet-photo-0 .planet-0{
+    height: 100%;
+    width: 6rem;
+
+    filter: grayscale(100%);
+}
+
+.planet-photo-0 .filter-0{
+    height: 78%;
+    width: 76%;
+
+    margin: 10px;
+    margin-left: 12%;
+    margin-top: -95%;
+
+    border-radius: 50%;
+    opacity: 60%;
+}
+
+.planet-photo-1{
+    height: 60%;
+    width: 60%;
+    margin-right: 2rem;
+}
+
+.planet-photo-1 .planet-1 {
+    height: 20rem;
+    width: 20rem;
+    
+    filter: grayscale(100%);
+}
+
+.planet-photo-1 .filter-1 {
+    height: 15rem;
+    width: 15rem;
+
+    margin: 1rem;
+    margin-left: 2.5rem;
+    margin-top: -18rem;
+
+    border-radius: 50%;
+    opacity: 60%;
+}

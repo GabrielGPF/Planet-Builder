@@ -1,21 +1,16 @@
-.login-input-box {
+.input-box label {
     display: flex;
     flex-direction: column;
+
+    color: #3c60c9;
 }
 
-.login-input-box label {
-    margin-bottom: 5px;
-    align-self: flex-start;
-    color: #e1c2e9;
-}
-
-input.login-input {
+input.input {
     -moz-box-shadow:    inset 0 0 4px #000000;
     -webkit-box-shadow: inset 0 0 4px #000000;
     box-shadow:         inset 0 0 4px #000000;
 
     height: 3.6rem;
-    width: 40rem;
     padding-left: 10px;
     padding-right: 10px;
 
@@ -23,11 +18,11 @@ input.login-input {
     border: 0.3rem;
     border-radius: 10px;
 
-    background-color: #592366;
-    color: #e1c2e9;
+    background-color: #3c60c9;
+    color: white;
 }
 
-input.login-input:focus {
+input.input:focus {
     -moz-box-shadow:    inset 0 0 0 #000000;
     -webkit-box-shadow: inset 0 0 0 #000000;
     box-shadow:         inset 0 0 0 #000000;
@@ -38,5 +33,5 @@ input.login-input:focus {
     border-style: solid;
     border-radius: 10px;
 
-    background-color: #7b398b;
+    background-color: #7b95e3;
 }

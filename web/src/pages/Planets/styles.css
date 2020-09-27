@@ -1,0 +1,296 @@
+#planets {
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.margin {
+    width: 20rem;
+    height: 100%;
+}
+
+.main-page {
+    height: 100%;
+    width: 100%;
+
+    padding: 3rem;
+    padding-top: 2rem;
+
+    background-image: radial-gradient(#e3e8f8,  #9eadda);
+}
+
+html,body,#wrapper {
+    width: 100%;
+    height:100%;
+    margin:0;
+    padding:0;
+
+    flex-direction: row;
+}
+#wrapper {
+    position:relative;
+}
+
+#top, #middle, #bottom {
+    position:absolute;
+}
+
+#top {
+    top: 0;
+    height:100px;
+    width:100%;
+}
+
+#middle {
+    top:100px;
+    bottom:0px;
+    width:100%;
+    
+}
+
+#bottom {
+    bottom:0;
+    height:100px;
+    width:100%;
+}
+
+.header {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+
+    font-size: 4rem;
+    font-family: 'Josefin Sans';
+    color: #330e3c;
+
+}
+
+.divider-vertical {
+    height: 80%;
+    width: 3px;
+
+    background-color: #330e3c;
+    border-color: #330e3c;
+    border-style: solid;
+    border-radius: 20px;
+}
+
+.divider-horizontal {
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 5px;
+
+    background-color: #330e3c;
+    border-color: #330e3c;
+    border-style: solid;
+    border-radius: 20px;
+}
+
+.planets-list {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    padding: 2rem;
+
+    overflow: auto;
+    background-color: white;
+}
+
+.planet-container {
+    width: 100%;
+    height: 8rem;
+    border-radius: 20px;
+    padding: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(90deg,  #9eadda 0%, #b6c3e9 100%);
+
+    transition: 0.3s;
+}
+
+.planet-container:hover {
+    cursor: pointer;
+    background: linear-gradient(90deg,  #7083bd 0%, #8797c9 100%);
+}
+
+.planet-description{
+    font-family: 'Josefin Sans';
+    font-size: large;
+}
+
+.planet-delete-button {
+    height: 100%;
+    width: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    font-size: 3rem;
+
+    border-radius: 20px;
+    background-color: #ec4d4d;
+    padding: 3px;
+
+    transition: 0.3s;
+}
+
+.planet-delete-button:hover {
+    background-color: red;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+    
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+  
+.modal-window {
+    width: 45%;
+    height: 65%;
+
+    padding: 3rem;
+
+    background: radial-gradient( #b6c3e9, #9eadda );
+    margin: auto;
+
+    border-radius: 20px;
+}
+
+.close-modal {
+    background:grey;
+    color:#FFF;
+    
+    height:2.5rem;
+    width: 2.5rem;
+    border-radius: 20px;
+    position:absolute;
+    margin-top: -2rem;
+    margin-left: -2rem;
+
+    font-size: 3rem;
+    text-align:center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.2s;
+}
+  
+.close-modal:hover,
+.close-modal:focus {
+    background:rgb(83, 83, 83);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.delete-modal {
+    background:#ec4d4d;
+    color:#FFF;
+    
+    height:2.5rem;
+    width: 2.5rem;
+    margin-top: -2rem;
+    margin-right: -2rem;
+    border-radius: 20px;
+    float: right;
+
+    font-size: 3rem;
+    text-align:center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.2s;
+}
+  
+.delete-modal:hover,
+.delete-modal:focus {
+    background:red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content {
+    height: 100%;
+    width: 100%;
+
+    padding: 1rem;
+
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.modal-container {
+    height: 100%;
+    width: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.modal-input{
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-input label {
+    display: flex;
+    flex-direction: column;
+
+    color: #3c60c9;
+}
+
+.modal-input input {
+    -moz-box-shadow:    inset 0 0 4px #000000;
+    -webkit-box-shadow: inset 0 0 4px #000000;
+    box-shadow:         inset 0 0 4px #000000;
+
+    height: 3.6rem;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    outline-width: 0;
+    border: 0.3rem;
+    border-radius: 10px;
+
+    background-color: #3c60c9;
+    color: white;
+}
+
+.modal-input input:focus {
+    -moz-box-shadow:    inset 0 0 0 #000000;
+    -webkit-box-shadow: inset 0 0 0 #000000;
+    box-shadow:         inset 0 0 0 #000000;
+
+    outline-width: 0px;
+
+    border: rgba(160, 152, 152, 100) 0.13rem inset;
+    border-style: solid;
+    border-radius: 10px;
+
+    background-color: #7b95e3;
+}

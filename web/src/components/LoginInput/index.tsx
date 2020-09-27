@@ -12,7 +12,7 @@ const LoginInput: React.FC<LoginInputProps> = ({
     ...rest
 }) => {
     return (
-        <div className='input-box'>
+        <div className='login-input-box'>
             <label htmlFor={name}>{label}</label>
             <input className='login-input' id={name} {...rest}/>
         </div>

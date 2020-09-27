@@ -3,10 +3,10 @@ import './styles.css';
 
 const Background = () => {
     return (
-        <React.Fragment>
+        <div className="background">
             <div className="stars"></div>
             <div className="twinkling"></div>
-        </React.Fragment>
+        </div>
     );
 }
 

@@ -3,13 +3,6 @@
     width: 100%;
 }
 
-.background{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-}
-
 .rest {
     height: 100%;
     display: flex;
@@ -53,6 +46,22 @@
     height: 4rem;
     width: 100%;
     padding: 0px 5rem 0px 5rem;
+}
+
+.new-user {
+    margin-top: 20px;
+    color: #e1c2e9;
+}
+
+.new-user a {
+    color: #7b7bdd;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.new-user a:hover {
+    color:  #4b4be2;
 }
 
 @media (min-width: 500px) {

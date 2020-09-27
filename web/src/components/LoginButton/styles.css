@@ -28,4 +28,5 @@ button:disabled {
 
 button:hover {
     background-color: #330e3c;
+    cursor: pointer;
 }

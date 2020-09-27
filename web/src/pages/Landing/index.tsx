@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Background from '../../components/Background';
 import LoginButton from '../../components/LoginButton';
 import LoginInput from '../../components/LoginInput';
@@ -7,9 +8,7 @@ import './styles.css';
 const Landing = () => {
     return (
         <div id="page">
-            <div className="background">
-                <Background/>
-            </div>
+            <Background/>
             <div className="rest">
                 <div className="title">
                     Planet Builder
@@ -21,8 +20,16 @@ const Landing = () => {
                             <LoginInput type="password" name="password" label="Password"/>
                         </div>
                         <span className="login-button">
-                            <LoginButton/>
+                            <Link to='/planets'>
+                                <LoginButton/>
+                            </Link>
                         </span>
+                        <div className="new-user">
+                            Precisando de uma conta?{" "}
+                            <Link to='/newUser'>
+                                <a>Registre-se</a>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>

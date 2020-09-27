@@ -1,0 +1,27 @@
+.user-info {
+    width: 200px;
+    height: 80px;
+
+    font-size: 1.8rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+}
+
+.user-info i {
+    margin-left: 0.5rem;
+    font-size: 2rem;
+    color: #562861;
+
+    transition: 0.2s;
+}
+
+.user-info i:hover {
+    font-size: 2.5rem;
+    color: #330e3c;
+
+    cursor: pointer;
+}
