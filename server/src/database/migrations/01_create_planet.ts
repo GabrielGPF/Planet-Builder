@@ -9,6 +9,7 @@ export async function up(knex: Knex) {
         table.integer('size').notNullable();
         table.integer('age').notNullable();
         table.integer('temperature').notNullable();
+        table.boolean('active').defaultTo(true);
     });
 }
 

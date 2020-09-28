@@ -2,6 +2,8 @@
 
 ## GET
 
+- Rota para fazer login, checa as credenciais e retorna o objeto do usuário caso forem corretos
+
 - Rota para listar todos os planetas, entregando parte de seu conteúdo (nome, cor, galáxia, id)
 
 - Rota listando todo o conteúdo de um planeta especifico
