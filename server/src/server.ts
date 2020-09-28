@@ -1,38 +1,44 @@
 import express from 'express';
+import routes from './routes';
+// import { PlanetProps, UserProps } from './types';
 
 const app = express();
 
-app.get('/', (request, response) => {
-    console.log("Hello - /");
-    return response.send("Planet-Builder");
-});
+app.use(express.json());
 
-app.get('/users', (request, response) => {
-    console.log("Hello - /users");
-    const users = [
-        {
-            name: "batatinha@gmail.com",
-            password: "1234",
-        }
-    ]
+app.use(routes);
 
-    return response.send(users);
-});
+// app.get('/', (request, response) => {
+//     console.log("Hello - /");
+//     return response.send("Planet-Builder");
+// });
 
-app.get('/planets', (request, response) => {
-    console.log("Hello - /planets");
-    const planets = [
-        {
-            name: "Saturn",
-            galaxy: "Milky Way",
-            size: "36.184 mi",
-            color: "yellowish-brown",
-            age: "4,503 × 10^9",
-            temperature: "-178",
-        }
-    ]
+// app.post('/newUser', (request, response) => {
+//     console.log(request.body);
 
-    return response.send(planets);
-});
+//     try {
+//         if(request.body as UserProps){
+//             return response.send("sucesso");
+//         }
+//     } catch (e) {
+//         return response.send("fracasso");
+//     }
+// });
+
+// app.post('/planets', (request, response) => {
+//     console.log("Hello - /planets");
+//     const planets: PlanetProps[] = [
+//         {
+//             name: "Saturn",
+//             galaxy: "Milky Way",
+//             color: "yellowish-brown",
+//             size: 36.184,
+//             age: 4.503,
+//             temperature: -178,
+//         }
+//     ]
+
+//     return response.send(planets);
+// });
 
 app.listen(3333);
