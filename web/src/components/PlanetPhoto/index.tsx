@@ -10,23 +10,13 @@ enum PlanetPhotoScreen {
 
 interface PlanetPhotoProps {
     color?: string,
-    photoLink?: string,
     screen: PlanetPhotoScreen
 }
 
 const PlanetPhoto: React.FC<PlanetPhotoProps> = ({
     color,
-    photoLink,
     screen
 }) => {
-    if(photoLink){
-        return (
-            <div className={'planet-photo-' + screen}>
-                <img className={'planet-' + screen} src={photoLink} alt='Planet'/>
-            </div>
-        );
-    }
-
     return (
         <div className={'planet-photo-' + screen}>
             <img className={'planet-' + screen} src={planetPng} alt='Planet'/>

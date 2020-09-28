@@ -1,0 +1,45 @@
+.planet-container {
+    width: 100%;
+    height: 8rem;
+    border-radius: 20px;
+    padding: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(90deg,  #9eadda 0%, #b6c3e9 100%);
+
+    transition: 0.3s;
+}
+
+.planet-container:hover {
+    cursor: pointer;
+    background: linear-gradient(90deg,  #7083bd 0%, #8797c9 100%);
+}
+
+.planet-description{
+    font-family: 'Josefin Sans';
+    font-size: large;
+}
+
+.planet-delete-button {
+    height: 100%;
+    width: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    font-size: 3rem;
+
+    border-radius: 20px;
+    background-color: #ec4d4d;
+    padding: 3px;
+
+    transition: 0.3s;
+}
+
+.planet-delete-button:hover {
+    background-color: red;
+}
