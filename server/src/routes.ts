@@ -4,7 +4,7 @@ import { PlanetProps, UserProps } from './types';
 
 const routes = express.Router();
 
-routes.get('/login', async (request, response) => {
+routes.post('/login', async (request, response) => {
     try{
         const user: UserProps = request.body;
 
@@ -12,7 +12,11 @@ routes.get('/login', async (request, response) => {
             .where(user)
             .select('*');
 
-        return response.status(200).send(userDB);
+        if(userDB[0]){
+            return response.status(200).send(user);
+        } else {
+            return response.status(400).send(false);
+        }
     } catch(e){
         return response.status(400).send(e);
     }
@@ -30,9 +34,9 @@ routes.get('/planets', async (request, response) => {
     }
 });
 
-routes.get('/planet', async (request, response) => {
+routes.get('/planet:id', async (request, response) => {
     try{
-        const { id } = request.body;
+        const { id } = request.params;
 
         const planet = await db('planets')
             .where({ id })

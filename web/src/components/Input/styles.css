@@ -1,8 +1,10 @@
-.input-box label {
+.input-box  {
     display: flex;
     flex-direction: column;
     margin-bottom: 5px;
+}
 
+.label {
     color: #3c60c9;
 }
 
@@ -35,4 +37,10 @@ input.input:focus {
     border-radius: 10px;
 
     background-color: #7b95e3;
+}
+
+.error {
+    margin-top: 5px;
+    color: red;
+    font-size: small;
 }

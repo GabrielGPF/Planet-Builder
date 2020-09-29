@@ -89,6 +89,9 @@ html,body,#wrapper {
     color: white;
     font-weight: bold;
     font-size: 1.3rem;
+    
+    border-radius: 20px;
+    border-color: rgb(3, 95, 3);
 
     transition: 0.3s;
 }

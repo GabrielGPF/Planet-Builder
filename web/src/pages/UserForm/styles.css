@@ -49,10 +49,14 @@
     height: 15%;
     width: 80%;
 
+    border-radius: 10px;
+    border: none;
     background-color: #2753d6;
     color: white;
 }
 
 .user-register-button:hover {
     background-color: #2443a1;
+
+    cursor: pointer;
 }

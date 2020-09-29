@@ -1,59 +1,89 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { useState } from 'react';
+import { Controller, useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 import Background from '../../components/Background';
 import Input from '../../components/Input';
+import { PlanetProps } from '../../components/PlanetContainer';
 import PlanetPhoto from '../../components/PlanetPhoto';
+import api from '../../services/api';
 import './styles.css';
 
 const PlanetForm = () => {
     const [color, setColor] = useState('#ffffff');
     const [link, setLink] = useState('');
 
-    let history = useHistory();
+    const history = useHistory();
+    const { register, control, handleSubmit, errors } = useForm<PlanetProps>({
+        mode: 'onSubmit',
+        reValidateMode: 'onChange',
+        defaultValues: {
+            name: '',
+            color,
+            galaxy: '',
+            age: 0,
+            size: 0,
+            temperature: 0
+        },
+        resolver: undefined,
+        context: undefined,
+        criteriaMode: "firstError",
+        shouldFocusError: true,
+        shouldUnregister: true,
+    });
 
     function handleGoBack() {
         history.goBack();
     }
 
-    function checkURL(url: string) {
-        console.log(url);
-setLink(url);
-        // try {
-        //     window.atob(url);
-        //     setLink(url);
-
-        //     console.log('bruh');
-            
-        // }catch (e){
-        //     if(url.match(/\.(jpeg|jpg|gif|png)$/) != null){
-        //         console.log('moment');
-        //         ;
-        //     }
-        // }
+    async function createPlanet(data:PlanetProps){
+        await api.post('/newPlanet', data).then(() => {
+            history.goBack();
+        });
     }
+
+    const onSubmit = (data: PlanetProps) => {
+        createPlanet(data);
+    };
     
     return (
         <div id='planet-form'>
             <Background/>
-            <div className="planet-form-sheet">
+            <form className="planet-form-sheet" id='form' onSubmit={handleSubmit(onSubmit)}>
                 <div className="first-column">
                     <div className="photo">
                         <PlanetPhoto screen={2} color={color}/>
                     </div>
-                    <Input label='Cor do planeta:' name='planetColor' type="color" defaultValue={color} onChange={(e) => setColor(e.currentTarget.value)}/>
-                    <Input label='Nome:' name='imageLink' type="text"/>
-                    <Input label='Galáxia:' name='galaxy' type="text"/>
+                    <Controller name='color' control={control} rules={{required: true}} render={({ onChange, onBlur, value, name }) => {
+                        return <Input label='Cor do planeta:' type="color" value={value} onBlur={onBlur} name={name}
+                            onChange={(e) => {
+                                onChange(e);
+                                setColor(e.currentTarget.value);
+                            }}
+                        />
+                    }}/>
+                    <Controller name='name' control={control} rules={{required: true}} render={({ onChange, onBlur, value, name }) => {
+                        return <Input label='Nome:' error={errors.name && errors.name.type === "required"} onChange={onChange} onBlur={onBlur} value={value} name={name} type="text"/>
+                    }}/>
+                    <Controller name='galaxy' control={control} rules={{required: true}} render={({ onChange, onBlur, value, name }) => {
+                        return <Input label='Galáxia:' error={errors.galaxy && errors.galaxy.type === "required"} onChange={onChange} onBlur={onBlur} value={value} name={name} type="text"/>
+                    }}/>
                     <div/>
                 </div>
                 <hr/>
                 <div className="first-column">
                     <span className='user-back-button' onClick={handleGoBack}><i className='fa fa-times'></i></span>
-                    <Input label='Tamanho(mi):' name='size' type="number"/>
-                    <Input label='Idade(bilhões de anos):' name='age' type="number"/>
-                    <Input label='Temperatura(K):' name='temperature' type="number"/>
+                    <Controller name='size' control={control} rules={{required: true}} render={({ onChange, onBlur, value, name }) => {
+                        return <Input label='Tamanho(mi):' onChange={onChange} onBlur={onBlur} value={value} name={name} type="number"/>
+                    }}/>
+                    <Controller name='age' control={control} rules={{required: true}} render={({ onChange, onBlur, value, name }) => {
+                        return <Input label='Idade(bilhões de anos):' onChange={onChange} onBlur={onBlur} value={value} name={name} type="number"/>
+                    }}/>
+                    <Controller name='temperature' control={control} rules={{required: true}} render={({ onChange, onBlur, value, name }) => {
+                        return <Input label='Temperatura(K):' onChange={onChange} onBlur={onBlur} value={value} name={name} type="number"/>
+                    }}/>
                     <button>Cadastrar</button>
                 </div>
-            </div>
+            </form>
         </div>
     );
 }

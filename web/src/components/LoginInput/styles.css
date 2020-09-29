@@ -40,3 +40,9 @@ input.login-input:focus {
 
     background-color: #7b398b;
 }
+
+.error {
+    margin-top: 5px;
+    color: red;
+    font-size: small;
+}

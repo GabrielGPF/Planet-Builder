@@ -1,23 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Background from '../../components/Background';
 import './styles.css';
 
 import UserInfo from '../../components/UserInfo';
-import PlanetContainer, { PlanetProps } from '../../components/PlanetContainer';
+import PlanetContainer from '../../components/PlanetContainer';
 import { Link } from 'react-router-dom';
+import api from '../../services/api';
+
+export interface UserProps{
+    id: string,
+    email: string,
+    password: string
+}
 
 const Planets = () => {
-    const planets:PlanetProps[] = [
-        {
-            _id: '1',
-            name: 'Plutao',
-            color: '#32a852',
-            galaxy: 'Via Lactea',
-            age: 6,
-            temperature: 230,
-            size: 1609,
-        },
-    ];
+    const [planets, setPlanets] = useState([]);
+
+    useEffect(() => {
+        api.get('/planets').then(response => {
+            const apiPlanets = response.data;
+
+            setPlanets(apiPlanets);
+        });
+    }, []);
 
     return (
         <div id='planets'>
@@ -35,14 +40,14 @@ const Planets = () => {
                                 </button>
                             </Link>
                             <hr className='divider-vertical'/>
-                            <UserInfo email='gabriel.fardoski'/>
+                            <UserInfo email={localStorage.getItem('user') as string}/>
                         </div>
                     </div>
                     <div id='middle'>
                         <div className='planets-list'>
-                            {planets.map((planet, index) => {
+                            {planets && planets.map((planet, index) => {
                                 return (
-                                    <PlanetContainer planet={planet} index={index}/>
+                                    <PlanetContainer key={index} planet={planet} index={index}/>
                                 );
                             })}
                         </div>
