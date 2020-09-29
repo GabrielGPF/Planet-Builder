@@ -1,8 +1,7 @@
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Background from '../../components/Background';
-import Input from '../../components/Input';
 import LoginInput from '../../components/LoginInput';
 import api from '../../services/api';
 import { UserProps } from '../UserForm';
@@ -10,7 +9,7 @@ import './styles.css';
 
 const Landing = () => {
     let history = useHistory();
-    const { register, control, handleSubmit, errors } = useForm<UserProps>({
+    const { control, handleSubmit, errors } = useForm<UserProps>({
         mode: 'onSubmit',
         reValidateMode: 'onChange',
         defaultValues: {
@@ -62,9 +61,7 @@ const Landing = () => {
                         </span>
                         <div className="new-user">
                             Precisando de uma conta?{" "}
-                            <Link to='/newUser'>
-                                <a>Registre-se</a>
-                            </Link>
+                            <a href="/newUser">Registre-se</a>
                         </div>
                     </form>
                 </div>

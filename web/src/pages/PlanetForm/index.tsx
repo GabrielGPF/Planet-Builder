@@ -10,10 +10,9 @@ import './styles.css';
 
 const PlanetForm = () => {
     const [color, setColor] = useState('#ffffff');
-    const [link, setLink] = useState('');
 
     const history = useHistory();
-    const { register, control, handleSubmit, errors } = useForm<PlanetProps>({
+    const { control, handleSubmit, errors } = useForm<PlanetProps>({
         mode: 'onSubmit',
         reValidateMode: 'onChange',
         defaultValues: {

@@ -42,20 +42,20 @@ const PlanetContainer: React.FC<PlanetContainer> = ({
     const modal = document.getElementById("myModal");
                             
     window.onclick = (event: MouseEvent) => {
-        if ((event.target as Element)?.innerHTML == modal?.innerHTML) {
+        if ((event.target as Element)?.innerHTML === modal?.innerHTML) {
             changeModalDisplay("none");
         }
     }
 
     let marginTop = '15px';
 
-    if(index == 0){
+    if(index === 0){
         marginTop = '0px';
     }
 
     //API
     async function deletePlanet(){
-        const res = await api.put('/deletePlanet', {
+        await api.put('/deletePlanet', {
             id: planet.id
         });
 
@@ -73,7 +73,7 @@ const PlanetContainer: React.FC<PlanetContainer> = ({
     return (
         <React.Fragment>
             <div className='planet-container' style={{ marginTop: marginTop }} onClick={(event) => {
-                    if((event.target as Element).className != 'planet-delete-button' && (event.target as Element).className != 'fa fa-times') {
+                    if((event.target as Element).className !== 'planet-delete-button' && (event.target as Element).className !== 'fa fa-times') {
                         changeModalDisplay('block');
                     }
 

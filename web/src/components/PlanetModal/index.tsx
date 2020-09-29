@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import api from '../../services/api';
+import React from 'react';
 import { PlanetProps } from '../PlanetContainer';
 import PlanetPhoto from '../PlanetPhoto';
 import './styles.css';
