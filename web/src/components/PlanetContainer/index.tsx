@@ -39,11 +39,15 @@ const PlanetContainer: React.FC<PlanetContainer> = ({
     const [modalDisplay, changeModalDisplay] = useState('none');
     const history = useHistory();
     
-    const modal = document.getElementById("myModal");
+
                             
     window.onclick = (event: MouseEvent) => {
-        if ((event.target as Element)?.innerHTML === modal?.innerHTML) {
-            changeModalDisplay("none");
+        const modal = document.getElementById("myModal"+ planet.id);
+
+        if(modalDisplay === 'block'){
+            if ((event.target as Element)?.innerHTML === modal?.innerHTML) {
+                changeModalDisplay("none");
+            }
         }
     }
 

@@ -15,7 +15,7 @@ const PlanetModal: React.FC<PlanetModalProps> = ({
     onClose,
 }) => {
     return (
-        <div id="myModal" className="modal" style={{
+        <div id={"myModal"+planet.id} className="modal" style={{
             display: display
         }}>
             <div className="modal-window">
